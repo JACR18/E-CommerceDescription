@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Rack / Squat Cage – GymGear Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>GymGear Pro</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="product-detail">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <!-- Updated high-quality 2025-2026 style images: full rack views, loaded setups, in-use bench/squat -->
+        <img src="https://www.torquefitness.com/cdn/shop/files/ConsumerHomePackage-HighSquatRackTallStoragePackage_840x.jpg?v=1738880437" alt="High Power Rack in Modern Home Gym Setup">
+        <img src="https://cdn.shopify.com/s/files/1/0586/3237/2390/t/4/assets/rep-fitness-pr5000-power-rackjpg-1680626584110.jpg?v=1680626585" alt="REP-Style Power Rack with Loaded Barbell">
+        <img src="https://bellsofsteel.us/cdn/shop/articles/Can-You-Bench-in-a-Power-Rack_-Your-Questions-Answered-scaled.webp?v=1714161275&width=1600" alt="Bench Press Safely Inside Power Rack">
+        <img src="https://www.torquefitness.com/cdn/shop/files/HighSquatRackUltimate-FullPackage_TallVerticalStorage_840x.jpg?v=1738881112" alt="Ultimate Power Rack Package with Plates and Bench">
+        <img src="https://bellsofsteel.us/cdn/shop/files/Copy_20of_20IMG_0481_d0bd4998-30d1-474f-a122-d85a27d6ec75.jpg?v=1764593881&width=2048" alt="Pull-Up on Residential Power Rack">
+        <img src="https://imagely.mirafit.co.uk/wp/wp-content/uploads/2018/06/fitness-expert-uses-mirafit-power-rack-for-chest-workout-1024x683.jpg" alt="In-Use Bench Press in Black Power Rack">
+      </div>
+      <button class="arrow prev" onclick="moveSlide(-1)">‹</button>
+      <button class="arrow next" onclick="moveSlide(1)">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-detail">
+      <h1>Power Rack / Squat Cage</h1>
+      <div class="price">$649</div>
+      <div class="category">Full Body / Legs</div>
+      <p>The absolute foundation for serious strength training at home. This full power cage delivers unmatched safety for heavy barbell lifts—deep squats, bench presses, overhead work, rack pulls, and deadlifts—without needing a spotter. 3x3" (or equivalent) 11-gauge steel uprights with Westside-style hole spacing handle 1,200+ lb loads rock-solid, no wobble even on max-effort sets.</p>
+      <p>Comes loaded with adjustable J-hooks (urethane rollers for smooth bar loading), heavy-duty pin/pipe safeties, multi-grip pull-up bar (standard + wide/neutral options), and built-in band pegs. Add dip handles, landmine post, jammer arms, or cable pulley system later to turn it into a complete station. Powder-coated finish fights rust and looks sharp for years.</p>
+      <p>Compact footprint (around 48-50" deep x 49" wide) fits garages, basements, or spare rooms without feeling cramped, yet gives commercial-level stability. Perfect for progressive overload on the big compounds or accessory work—build real power, size, and confidence safely.</p>
+      <p>If you're done messing around with flimsy stands or half-racks that tip, this is the upgrade that changes everything. Pair it with your bench, Olympic bar, and plates for endless programming and PR-chasing sessions.</p>
+      <a href="#" class="btn">Add to Cart – Free Shipping + Setup Guide</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slider = document.getElementById('slider');
+const totalSlides = slider.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// Create dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+  current = (index + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function moveSlide(dir) {
+  goToSlide(current + dir);
+}
+
+// Initial setup
+goToSlide(0);
+</script>
+<div class="container">
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+</body>
+</html>

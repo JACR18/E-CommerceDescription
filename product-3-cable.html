@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cable Crossover Station – GymGear Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>GymGear Pro</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="product-detail">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <!-- Main product views -->
+        <img src="https://www.360fitnesssuperstore.com/cdn/shop/files/warrior-801-all-in-one-home-gym-functional-trainer-power-rack-smith-cage-demo-inhomemain_1024x1024.jpg?v=1765922453" alt="Cable Crossover Functional Trainer in Home Gym">
+        <img src="https://elitefts.com/cdn/shop/files/Cable-Cross-Over-purple.jpg?v=1760273993&width=1000" alt="Selectorized Cable Crossover - Purple Frame">
+        <img src="https://wcgymequipment.com/wp-content/uploads/2023/07/Flow-Fitness-cable-crossover-2.jpg" alt="Flow Fitness Cable Crossover Side View">
+        <img src="https://www.globalfitness.com/cdn/shop/products/sportgear-dual-adjustable-pulley-functional-trainer-dap_1920x.jpg?v=1656594510" alt="Dual Adjustable Pulley Functional Trainer Front">
+        <img src="https://elitefts.com/cdn/shop/files/Cable-Cross-Over-blue.jpg?v=1760273993&width=1000" alt="Heavy-Duty Cable Crossover - Blue">
+        <img src="https://www.garagegymreviews.com/wp-content/uploads/2023/08/woman-doing-standing-cable-crunch.jpg" alt="In Use - Cable Crunch Exercise">
+      </div>
+      <button class="arrow prev" onclick="moveSlide(-1)">‹</button>
+      <button class="arrow next" onclick="moveSlide(1)">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-detail">
+      <h1>Cable Crossover Station</h1>
+      <div class="price">$1,299</div>
+      <div class="category">Chest / Back</div>
+      <p>Independent dual-pulley system with smooth, commercial-grade carriages that glide without sticking—even under heavy loads. Adjustable height positions let you hit every angle: high-to-low cable flies for upper chest, low-to-high for lower pecs, cross-body chops, rows, face pulls, tricep pushdowns, and more. No need for multiple machines—this one does it all.</p>
+      <p>Built on a heavy 11-gauge steel frame with reinforced base plates for rock-solid stability (no tipping during intense sets). Comes with dual 200+ lb weight stacks (plate-loaded or selectorized options available), ergonomic handles, ankle straps, tricep ropes, and D-handles included. Pulley ratio is 2:1 for precise control and natural feel.</p>
+      <p>Compact footprint for home gyms (fits in corners or against walls) but tough enough for daily commercial-style use. Powder-coated finish resists scratches and sweat. If you're serious about building a complete upper-body arsenal—chest definition, wide back, capped shoulders, strong arms—this is the piece that ties everything together.</p>
+      <p>Thousands of exercise variations mean endless progression without boredom. Upgrade your training from basic free weights to cable tension that hits muscles harder and safer.</p>
+      <a href="#" class="btn">Add to Cart – Free Shipping & Setup Guide</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slider = document.getElementById('slider');
+const totalSlides = slider.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// Create dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+  current = (index + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function moveSlide(dir) {
+  goToSlide(current + dir);
+}
+
+// Initial setup
+goToSlide(0);
+</script>
+<div class="container">
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+</body>
+</html>

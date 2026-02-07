@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heavy-Duty Adjustable Bench – GymGear Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>GymGear Pro</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="product-detail">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <img src="https://i5.walmartimages.com/seo/Weight-Bench-Adjustable-Weight-Bench-Bench-Press-Set-with-Leg-Extension-Preacher-Curl-Pad-Workout-Bench-for-Home-Gym_dc8deb57-e5dc-4d93-a216-bd7f512d6d9e.85cf874f0e80d387042bd68989ae8852.jpeg" alt="Bench main">
+        <img src="https://m.media-amazon.com/images/I/71XUzLgeyiL.jpg" alt="Bench incline">
+        <img src="https://www.verywellfit.com/thmb/bHcoQyJyx_lDDlnMJLhl5WaSou4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Compositetemplate-6c9a36a77c5a435eb7f8355c0c64847e.png" alt="Bench usage">
+      </div>
+      <button class="arrow prev" onclick="moveSlide(-1)">‹</button>
+      <button class="arrow next" onclick="moveSlide(1)">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-detail">
+      <h1>Heavy-Duty Adjustable Bench</h1>
+      <div class="price">$189</div>
+      <div class="category">Chest Equipment</div>
+      <p>This isn't some flimsy folding bench that wobbles when you breathe on it. Built with 2×2" heavy-gauge steel, it supports up to 1,000 lbs including user weight. 8 back positions + 3 seat positions let you hit flat, incline, decline, and military press angles comfortably.</p>
+      <p>High-density foam padding with commercial-grade vinyl stays firm but comfortable even after years of heavy use. Includes leg developer + preacher curl attachment for curls and extensions. Quick-adjust pop-pin system means you spend less time fiddling and more time lifting.</p>
+      <p>Perfect for serious home lifters who want real gym feel without the commercial price tag.</p>
+      <a href="#" class="btn">Add to Cart – Ships Free</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slider = document.getElementById('slider');
+const slides = slider.children.length;
+const dotsContainer = document.getElementById('dots');
+
+for(let i=0; i<slides; i++){
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if(i===0) dot.classList.add('active');
+  dot.onclick = ()=> goTo(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = dotsContainer.children;
+
+function goTo(idx){
+  current = (idx + slides) % slides;
+  slider.style.transform = `translateX(-${current*100}%)`;
+  for(let d of dots) d.classList.remove('active');
+  dots[current].classList.add('active');
+}
+function moveSlide(dir){ goTo(current + dir); }
+</script>
+<div class="container">
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+</body>
+</html>

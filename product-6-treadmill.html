@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commercial Grade Treadmill – GymGear Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>GymGear Pro</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="product-detail">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <!-- Product views: full machine, home setup, running in use, console detail -->
+        <img src="https://www.garagegymreviews.com/wp-content/uploads/2023/09/woman-walking-on-sole-f63-treadmill.jpg" alt="Commercial Treadmill in Home Gym Setup">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2025/03/BEST-TREADMILLS-2048px-01215-3x2-1.jpg?auto=webp&quality=75&crop=4:3,smart&width=1024" alt="NordicTrack Style Commercial Treadmill Running">
+        <img src="http://precorathome.com/cdn/shop/articles/TRM_445_EFX_447_3713_CHRIS_NO_TV_2020_d673d8e1-d29e-4038-9d9f-afb8a6de8796.jpg?v=1598359295" alt="Precor-Inspired Treadmill in Modern Home">
+        <img src="https://barbend.com/wp-content/uploads/2023/06/benefits-of-treadmills-featured-image-barbend.com_.jpg" alt="Runner on Commercial Grade Treadmill">
+        <img src="https://thumbs.dreamstime.com/b/modern-treadmill-console-closeup-close-up-features-large-touchscreen-display-digital-information-graphical-380881081.jpg" alt="Modern Touchscreen Console Close-Up">
+        <img src="https://www.johnsonfitness.com.au/cdn/shop/articles/Untitled_design_36.webp?v=1752561003&width=1120" alt="In Use - Walking/Running on Matrix Style Treadmill">
+      </div>
+      <button class="arrow prev" onclick="moveSlide(-1)">‹</button>
+      <button class="arrow next" onclick="moveSlide(1)">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-detail">
+      <h1>Commercial Grade Treadmill</h1>
+      <div class="price">$1,499</div>
+      <div class="category">Cardio</div>
+      <p>Built like gym-floor beasts but sized right for serious home use. 4.0+ CHP motor powers through hours of daily running/walking without strain—handles 400 lb user capacity easily. 22" wide x 60" long belt gives natural stride room, even for taller runners or high-speed intervals.</p>
+      <p>15-level auto incline (up to 15%) simulates real hills for calorie-torching sessions or endurance building. Cushioned deck with responsive shock absorption protects joints better than concrete pavement. Quiet operation (under 60 dB) means you can train early or late without waking the house.</p>
+      <p>Large touchscreen console (or Bluetooth tablet holder) streams workouts, tracks heart rate, calories, distance, speed, and incline. Built-in speakers, cooling fans, quick keys, and preset programs (hill, interval, fat burn, etc.) keep things engaging. Foldable frame with hydraulic assist for easy storage if space is tight.</p>
+      <p>Whether you're logging miles for a marathon, doing HIIT, or just getting consistent steps in, this treadmill delivers commercial durability and features without the commercial price tag. Stable frame, lifetime motor warranty on many components—invest once and run forever.</p>
+      <a href="#" class="btn">Add to Cart – Free Shipping + Setup Included</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slider = document.getElementById('slider');
+const totalSlides = slider.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// Create dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+  current = (index + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function moveSlide(dir) {
+  goToSlide(current + dir);
+}
+
+// Initial setup
+goToSlide(0);
+</script>
+<div class="container">
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lat Pulldown Machine – GymGear Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>GymGear Pro</h1>
+  </div>
+</header>
+
+<div class="container">
+  <div class="product-detail">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <!-- Working high-quality images: full machine views, in-use, details -->
+        <img src="https://bellsofsteel.us/cdn/shop/articles/Is-a-Lat-Pulldown-Machine-Worth-It-for-Your-Home-Gym.webp?v=1708539812&width=1024" alt="Bells of Steel Lat Pulldown Low Row Machine - Full View">
+        <img src="https://www.primefitnessusa.com/cdn/shop/files/P-104_ROT8_Hand_-_1208504_A_1024x.jpg?v=1717616823" alt="Prime Fitness Plate Loaded Lat Pulldown - Side Angle">
+        <img src="https://www.lifefitness.com/Kentico13CoreBase/media/LFMedia/LifeFitnessImages/MediaSync/252-486-plateloaded-frontpulldown.png?h=630&w=1200" alt="Life Fitness Plate Loaded Front Pulldown - Professional Build">
+        <img src="http://www.360fitnesssuperstore.com/cdn/shop/files/warrior-lat-pulldown-low-row-tower-white-circle-main_1200x1200.jpg?v=1703708647" alt="Warrior Lat Pulldown / Low-Row System - Home Gym Setup">
+        <img src="https://imagely.mirafit.co.uk/wp/wp-content/uploads/2022/11/One-Arm-Pulldowns-on-Mirafit-Lat-Pulldown-and-Seated-Row-Machine-1024x683.jpg" alt="One-Arm Lat Pulldown Exercise - In Use">
+        <img src="https://www.jefit.com/wp/wp-content/uploads/2021/08/shoulder-pull-down-machine-fitness-man-working-out-lat-pulldown-training-gym-upper-body-strength-exercise-upper-back-1024x683.jpg" alt="Wide Grip Lat Pulldown - Back View Action Shot">
+      </div>
+      <button class="arrow prev" onclick="moveSlide(-1)">‹</button>
+      <button class="arrow next" onclick="moveSlide(1)">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-detail">
+      <h1>Lat Pulldown Machine</h1>
+      <div class="price">$899</div>
+      <div class="category">Back Equipment</div>
+      <p>Build a wide, powerful back with this versatile lat pulldown setup. Smooth selectorized (or plate-loaded ready) resistance with wide-grip bar, close-grip, neutral handles, and rope attachments included. Targets lats, traps, rhomboids, rear delts, and biceps—adjustable thigh rollers keep you locked in for strict, cheat-free reps.</p>
+      <p>Heavy 11-gauge steel frame stands firm during heavy pulls. 300+ lb capacity stack (or sleeves for plates) with smooth aluminum pulleys and low-friction cables for consistent tension. Includes low-row functionality for seated rows, face pulls, straight-arm pulldowns, and more—ultimate upper-back builder in one compact footprint.</p>
+      <p>Fits home garages or training spaces without dominating room. Ergonomic padded seat and rollers for comfort on long sets. Powder coat resists sweat and wear. Progress from assisted pull-ups to heavy weighted pulls with perfect form.</p>
+      <p>Essential for V-taper development, posture improvement, and balanced upper-body strength. Add this and watch your back thickness and width explode safely and effectively.</p>
+      <a href="#" class="btn">Add to Cart – Free Shipping Included</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slider = document.getElementById('slider');
+const totalSlides = slider.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// Create dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+  current = (index + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function moveSlide(dir) {
+  goToSlide(current + dir);
+}
+
+// Initial setup
+goToSlide(0);
+</script>
+<div class="container">
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjustable Dumbbells 5-80 lbs Pair – GymGear Pro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>GymGear Pro</h1>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="product-detail">
+    <div class="slider-container">
+      <div class="slider" id="slider">
+        <!-- Main product shots -->
+        <img src="https://smrtft.com/cdn/shop/products/BLACK_80_1.png?v=1656079860&width=2613" alt="Adjustable Dumbbells Pair - Black">
+        <img src="https://m.media-amazon.com/images/I/61KE8cmqB+L._AC_UF1000,1000_QL80_.jpg" alt="Bowflex-style Adjustable Dumbbells on Stand">
+        <img src="https://garagegymlab.com/wp-content/uploads/Bowflex-SelecTech-552-Adjustable-Dumbbells.jpg" alt="Dial Adjustment Close-up">
+        <img src="https://cdn.thewirecutter.com/wp-content/media/2023/05/adjustable-dumbbell-2048px-9353.jpg?auto=webp&quality=75&width=1024" alt="Compact Storage View">
+        <img src="http://powerblock.com/cdn/shop/articles/pro-100-exp-_504-00183-01_lifestyle-racking_43c62789-40e0-4c92-a390-f3e229ca3342.jpg?v=1757954901" alt="In Use - Racking Dumbbells">
+      </div>
+      <button class="arrow prev" onclick="moveSlide(-1)">‹</button>
+      <button class="arrow next" onclick="moveSlide(1)">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+
+    <div class="product-info-detail">
+      <h1>Adjustable Dumbbells 5-80 lbs Pair</h1>
+      <div class="price">$399</div>
+      <div class="category">Full Body</div>
+      <p>Replace an entire rack of dumbbells with just one pair. Quick-dial adjustment lets you go from 5 lbs to 80 lbs per hand in seconds—no pins, no plates to load, no wasted time between sets. Perfect for progressive overload, supersets, or switching weights fast during circuits.</p>
+      <p>Each dumbbell is built tough with steel plates, knurled chrome handle for grip, and durable molded construction that feels balanced even at max weight. The compact design saves massive space in your home gym—say goodbye to clutter. Includes integrated trays/stands for easy storage and quick pickup.</p>
+      <p>Great for beginners building strength or advanced lifters doing everything from bicep curls and lateral raises to heavy rows, presses, and goblet squats. Drop-resistant up to moderate heights, lifetime-like durability for serious home use.</p>
+      <p>Why buy fixed weights when you can have 15+ pairs in the space of two? Save money, save space, get better workouts.</p>
+      <a href="#" class="btn">Add to Cart – Free Shipping</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let current = 0;
+const slider = document.getElementById('slider');
+const totalSlides = slider.children.length;
+const dotsContainer = document.getElementById('dots');
+
+// Create dots dynamically
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dot.onclick = () => goToSlide(i);
+  dotsContainer.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+
+function goToSlide(index) {
+  current = (index + totalSlides) % totalSlides;
+  slider.style.transform = `translateX(-${current * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === current));
+}
+
+function moveSlide(dir) {
+  goToSlide(current + dir);
+}
+
+// Initial setup
+goToSlide(0);
+</script>
+<div class="container">
+  <a href="index.html" class="back-home">Back to Home</a>
+</div>
+
+</body>
+</html>
